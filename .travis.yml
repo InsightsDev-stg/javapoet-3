@@ -5,7 +5,7 @@ after_success:
 - ' cd lib  '
 - ' mv * ../  '
 - ' cd ..  '
-- ' chmod a+x *  '
+- ' chmod a+x *  ' 
 - ' cd $PWD  '
 - ' rm  ''jacoco.exec'''
 - ' export JAVA_TOOL_OPTIONS=-javaagent:$PWD/jacocoagent.jar=destfile=$PWD/jacoco.exec,append=true  '
