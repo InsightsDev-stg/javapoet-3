@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class UtilTest {
-  @Test public void characterLiteral() {
+/*  @Test public void characterLiteral() {
     assertEquals("a", Util.characterLiteralWithoutSingleQuotes('a'));
     assertEquals("b", Util.characterLiteralWithoutSingleQuotes('b'));
     assertEquals("c", Util.characterLiteralWithoutSingleQuotes('c'));
@@ -71,5 +71,5 @@ public class UtilTest {
 
   void stringLiteral(String expected, String value, String indent) {
     assertEquals("\"" + expected + "\"", Util.stringLiteralWithDoubleQuotes(value, indent));
-  }
+  }*/
 }

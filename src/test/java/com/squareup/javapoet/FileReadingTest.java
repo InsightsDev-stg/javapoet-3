@@ -56,7 +56,7 @@ public class FileReadingTest {
         .isEqualTo(URI.create("com/example/Test.java"));
   }
   
-  @Test public void javaFileObjectKind() {
+/*  @Test public void javaFileObjectKind() {
     JavaFile javaFile = JavaFile.builder("", TypeSpec.classBuilder("Test").build()).build();
     assertThat(javaFile.toJavaFileObject().getKind()).isEqualTo(Kind.SOURCE);
   }
@@ -116,6 +116,6 @@ public class FileReadingTest {
     ClassLoader loader = fileManager.getClassLoader(StandardLocation.CLASS_OUTPUT);
     Callable<?> test = Class.forName("foo.Test", true, loader).asSubclass(Callable.class).newInstance();
     assertThat(Callable.class.getMethod("call").invoke(test)).isEqualTo(value);
-  }
+  }*/
 
 }
