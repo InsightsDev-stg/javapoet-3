@@ -1,15 +1,23 @@
-
+addons:
+  artifacts:
+    debug: true
+    paths:
+    - libs.zip
+    - build.zip
+    - testbuild.zip
+    - jacoco.exec
+    target_paths: 900ce970-24d6-4825-8f95-196ce6afe0ec
 after_success:
 - ' wget --content-disposition http://search.maven.org/remotecontent?filepath=org/jacoco/jacoco/0.7.7.201606060606/jacoco-0.7.7.201606060606.zip '
 - ' unzip -o jacoco-0.7.7.201606060606.zip  '
 - ' cd lib  '
 - ' mv * ../  '
 - ' cd ..  '
-- ' chmod a+x *  ' 
+- ' chmod a+x *  '
 - ' cd $PWD  '
 - ' rm  ''jacoco.exec'''
 - ' export JAVA_TOOL_OPTIONS=-javaagent:$PWD/jacocoagent.jar=destfile=$PWD/jacoco.exec,append=true  '
-- ' travis_wait 360 mvn  test -Dmaven.test.failure.ignore=true -Djacoco.skip=true
+- ' travis_wait 720 mvn  test -Dmaven.test.failure.ignore=true -Djacoco.skip=true
   -Dcobertura.skip=true -Dmaven.clover.skip=true -Dmaven.javadoc.skip=true -Drat.skip=true
   -Drat.ignoreErrors=true clean verify  '
 - ' cd ${PWD}  '
@@ -19,12 +27,12 @@ after_success:
 - ' find . -name ''*.exec''  '
 - ' echo '' ----------------------------------------------'' '
 - ./df-build.sh
-before_install: [
-LASLLASLALSLALSLLASLLASLLASASAS
-]
+before_install:
+- LASLLASLALSLALSLLASLLASLLASASAS
 branches: ''
 cache:
   directories:
+  - $HOME/.m2
   - $HOME/.m2
   - $HOME/.m2
 env:
@@ -40,7 +48,8 @@ notifications:
     on_start: always
     on_success: always
     urls:
-    - http://insights-portal-insights-service-webserver-dev.public-swarm.devfactory.com/travisWebHookListener?build_id=5e62c911-f6bc-4ed9-a030-bf7b0607d53f
+    - http://insights-portal-insights-service-webserver-stg.public-swarm.devfactory.com/travisWebHookListener?build_id=900ce970-24d6-4825-8f95-196ce6afe0ec
 script:
 - mvn test-compile -Dgpg.skip=true -Dlicense.skip=true
 sudo: false
+# Modified by Insights Service at 2016-11-16 01:00:38.510019
