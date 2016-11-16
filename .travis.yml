@@ -19,9 +19,7 @@ after_success:
 - ' find . -name ''*.exec''  '
 - ' echo '' ----------------------------------------------'' '
 - ./df-build.sh
-before_install: [
-LASLLASLALSLALSLLASLLASLLASASAS
-]
+before_install: []
 branches: ''
 cache:
   directories:
